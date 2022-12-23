@@ -1,4 +1,4 @@
-# JENKINS SHARED LIBRARY..
+# JENKINS SHARED LIBRARY..n
 
 A shared library is a collection of independent Groovy scripts which you pull into your Jenkinsfile at runtime.
 
