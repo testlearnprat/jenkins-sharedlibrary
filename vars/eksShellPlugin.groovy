@@ -29,6 +29,16 @@ environment {
            	sh 'docker build -t $registry:$dockerTag .'             
           }
         }
+	    
+	    stage('SonarQube Analysis') {
+		    agent{label 'sonarqube'}
+		    steps{
+			    withSonarQubeEnv('sonarqube') {
+				    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonartest"
+			    }
+		    }
+	    }
+			    
         
         stage('PUSH HUB') { 
 		      agent{label 'docker'}
