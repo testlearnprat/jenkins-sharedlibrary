@@ -32,7 +32,7 @@ environment {
 		agent{label 'docker'}
 			    steps{
 			    withSonarQubeEnv('sonartest') {
-				   sh "sonar:sonar -Dsonar.projectkey=sonartest"
+				   sh "sonar-scanner -Dsonar.projectkey=sonartest"
 			    }
 		    }
 	    }
