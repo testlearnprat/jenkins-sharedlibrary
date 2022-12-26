@@ -32,11 +32,7 @@ environment {
 		agent{label 'sonaeqube'}
 			    steps{
 			    withSonarQubeEnv('sonartest') {
-				    sonar-scanner \
-  -Dsonar.projectKey=sonartest \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://65.2.34.47:9000 \
-  -Dsonar.login=sqp_74b9dd28e735749035234b885b3be012562e5c46
+				   sh "mvn clean verify sonar:sonar -Dsonar.projectkey=sonartest"
 			    }
 		    }
 	    }
