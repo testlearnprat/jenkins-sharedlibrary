@@ -29,7 +29,7 @@ environment {
             		}
         }
         stage('SonarQube Analysis') {
-		    agent{label 'sonarqube'}
+		    agent{label 'sonaeqube'}
 		    steps{
 			    withSonarQubeEnv('sonarqube') {
 				    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonartest"
